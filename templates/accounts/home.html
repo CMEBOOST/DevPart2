@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+{% if user.is_authenticated %}
+    <span class="me-3">ยินดีต้อนรับกลับมา {{ user.username }}</span>
+    <a href="{% url 'profile_edit' %}" class="btn btn-outline-primary">แก้ไขโปรไฟล์ของฉัน</a>
+    </form>
+    {% else %}
+    <span class="me-3">ยินดีต้อนรับ</span>
+    {% endif %}
+{% endblock %}
