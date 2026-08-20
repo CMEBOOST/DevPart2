@@ -27,8 +27,8 @@ class Registerview(CreateView):
     
 class Loginview(LoginView):
     template_name = "accounts/login.html"
+    redirect_authenticated_user = True
     
-
 class LogoutView(LogoutView):
     next_page = 'home'
     
