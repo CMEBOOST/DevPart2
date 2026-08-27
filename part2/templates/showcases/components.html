@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="space-y-12 py-6">
+    <div class="border-b border-gray-200 pb-4">
+        <h1 class="text-2xl font-bold">Component Showcase</h1>
+        <p1 class="text-gray-600 text-sm mt-2">Tailwind Components Learning By Doing</p1>
+    </div>
+    
+    <!-- Typography เรื่องของ Text-->
+    <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Typography</h2>
+        <p class="text-gray-500">การจัดรูปแบบข้อความที่ใช้บ่อยๆ</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <h1 class="text-3xl">H1 3xl Heading - หัวเรื่อง</h1>
+            <h2 class="text-2xl">H2 2xl Sub-Heading - หัวเรื่องย่อย</h2>
+            <h3 class="text-xl">H3 xl Section-Header - ย่อย</h3>
+        </div>
+
+        <p class="text-gray-500">การจัดรูปแบบข้อความที่ใช้บ่อยๆ ตัวหนา</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <h1 class="text-3xl font-extrabold">H1 font-extrabold Heading - หัวเรื่อง</h1>
+            <h2 class="text-2xl font-semibold">H2 font-semibold Sub-Heading - หัวเรื่องย่อย</h2>
+            <h3 class="text-xl font-bold">H3 font-bold Section-Header - ย่อย</h3>
+        </div>
+
+        <p class="text-gray-500">การจัดรูปแบบข้อความที่ใช้บ่อยๆ p</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <p class="text-base">ข้อความธรรมดา</p>
+            <p class="text-sm text-gray-500">ข้อความขนาดเล็ก</p>
+        </div>
+        
+        <p class="text-gray-500">การจัดรูปแบบ Link</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+           <a href="#" class="text-blue-600 hover:underline">Link</a>
+        </div>
+    </section>
+
+    <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Button</h2>
+        <p class="text-gray-500">การจัดรูปแบบปุ่ม</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <button class="px-4 text-lg bg-blue-500 text-white py-2 rounded-sm">Primary</button>
+            <button class="px-4 text-lg bg-gray-700 text-white py-2 rounded-md">Dark</button>
+            <button class="px-4 text-lg bg-red-600 text-white py-2 rounded-lg">Danger</button>
+            <button class="px-4 text-lg bg-yellow-600 text-white py-2">Warning</button>
+        </div>
+        <p class="text-gray-500">การจัดรูปแบบปุ่ม Ourline</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <button class="px-16 border rounded border-blue-500 text-blue-600 hover:bg-blue-200 py-2 rounded">Primary</button>
+            <button class="px-16 border rounded border-gray-700 text-black-600 hover:bg-blue-200 py-2 rounded">Dark</button>
+            <button class="px-16 border rounded border-red-600 text-red-600 hover:bg-blue-200 py-2 rounded">Danger</button>
+            <button class="px-16 border rounded border-yellow-600 text-yellow-600 hover:bg-blue-200 py-2">Warning</button>
+        </div>
+    </section>
+
+    <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Padding</h2>
+        <p class="text-gray-500">ระยะห่างจากขอบเข้าไปด้านในกล่อง</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+
+        </div>
+    </section>
+
+    <section class="space-y-4">
+        <h2 class="text-2xl font-semibold">Flex</h2>
+        <p class="text-gray-500">Flex Box การจัดวาง Componenets ในแนวเดียว ไม่ว่าจะเป็น row column</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex gap-2 bg-gray-100 p-2">
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">3</div>
+                <p class="text-gray-500">จัดเป็น row ก่อนเสมอ</p>
+            </div>
+        </div>
+        <p class="text-gray-500">Flex column</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex flex-col w-2z gap-2 bg-gray-100 p-2 text-center w-24">
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+        <h2 class="text-2xl font-semibold">Flex-Herizontal</h2>
+        <p class="text-gray-500">flex justify-start</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex justify-start gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <p class="text-gray-500">flex justify-end</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex justify-end gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-red-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-red-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-red-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-red-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <p class="text-gray-500">flex justify-center</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex justify-center gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-yellow-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-yellow-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-yellow-500 rounded text-white text-sm p-3">3</div>
+                <div class="bg-yellow-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <p class="text-gray-500">flex justify-between</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex justify-between gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-orange-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-orange-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-orange-500 rounded text-white text-sm p-3">3</div>
+                <div class="bg-orange-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold">Flex-Verical Flex ในแนวตั้ง แกน Y</h2>
+        <p class="text-gray-500">flex items-start</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex items-start h-30 gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-blue-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <p class="text-gray-500">flex items-center</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex items-center h-30 gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-gray-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-gray-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-gray-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-gray-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <p class="text-gray-500">flex items-end</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex items-end h-30 gap-2 bg-gray-100 p-2 text-center">
+                <div class="bg-purple-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-purple-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-purple-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-purple-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold">justify-center + items-center</h2>
+        <p class="text-gray-500">ตรงกลางกล่อง</p>
+        <div class="bg-white rounded-lg shadow p-5 space-y-3">
+            <div class="flex justify-center items-center gap-2 h-30 bg-gray-100 p-2 text-center">
+                <div class="bg-green-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-green-500 rounded text-white text-sm p-3">1</div>
+                <div class="bg-green-500 rounded text-white text-sm p-3">2</div>
+                <div class="bg-green-500 rounded text-white text-sm p-3">3</div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    
+{% endblock %}

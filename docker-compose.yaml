@@ -1,0 +1,12 @@
+services: 
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: myproject_db #ชื่อ db
+      POSTGRES_USER: admin #ชื่อ user
+      POSTGRES_PASSWORD: admin123 #password
+    ports:
+      - "5432:5432" #outside:inner เชื่อม port
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

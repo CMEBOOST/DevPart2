@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h1 class="text-2xl font-semibold mb-2 ">หน้าแรก</h1>
+{% if user.is_authenticated %}
+    <p class="text-lg text-gray-700 mb-4">ยินดีต้อนรับกลับมา {{ user.username }}</p>
+    <a href="{% url 'profile_edit' %}" class="btn btn-outline-primary">แก้ไขโปรไฟล์ของฉัน</a>
+    </form>
+    {% else %}
+    <h1 class="text-sm text-gray-700 mb-4"">ยินดีต้อนรับ</h1>
+    {% endif %}
+{% endblock %}
