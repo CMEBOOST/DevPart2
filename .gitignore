@@ -19,6 +19,9 @@ db.sqlite3
 staticfiles/
 media/
 
+# Django migrations
+**/migrations/__pycache__/
+
 # Environment variables
 .env
 .env.*
