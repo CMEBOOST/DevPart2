@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="space-y-12 py-6">
+    <div class="border-b border-gray-200">
+        <h1 class="text-2xl font-bold">
+            <span class="text-red-300">Vanilla JS</span>
+             vs 
+             <span class="text-blue-400">Alpine JS</span>
+        </h1>
+        <p class="text-gray-600 text-sm">เปรียบเทียบ Code</p>
+    </div>
+    <section>
+        <h2 class="text-xl font-semibold mb-2">1. Variable Management</h2>
+        <p class="text-xs test-gray-500">counter +- ค่าตัวแปรด้วย ปุ่ม</p>
+
+        <div class="bg-white px-5 py-4 rounded-lg mt-4">
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-red-100 rounded p-3">
+                    <h3 class="text-lg font-semibold text-center ">Vannila JS</h3>
+                    <div class="flex flex-col items-center space-y-3">
+                        <div class="text-xl font-mono" id="v1_counter">0</div>
+                        <div>
+                            <button id="v1_increase" class="px-3 py-1 w-13 rounded-md bg-green-600 text-white">+</button>
+                            <button id="v1_decrease" class="px-3 py-1 w-13 rounded-md bg-red-600 text-white">-</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-100 rounded p-3" x-data="{ count : 0 }">
+                   <h3 class="text-lg font-semibold text-center">Apline JS</h3>
+                   <div class="flex flex-col items-center space-y-3">
+                        <div class="text-xl font-mono" x-text="count"></div>
+                        <div>
+                            <button id="v1_increase" class="px-3 py-1 w-13 rounded-md bg-green-600 text-white" @click="count++">+</button>
+                            <button id="v1_decrease" class="px-3 py-1 w-13 rounded-md bg-red-600 text-white" @click="count--">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-xl font-semibold mb-2">2. Show/Hide</h2>
+        <p class="text-xs test-gray-500">ซ่อนหรือแสดงบนหน้าเว็ป</p>
+
+        <div class="bg-white px-5 py-4 rounded-lg mt-4">
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-red-100 rounded p-4">
+                    <h3 class="text-lg font-semibold text-center border-b border-gray-700 mb-5">Vannila JS</h3>
+                    <div class="flex flex-col items-center space-y-3">
+                        <div class="text-xl font-mono transition-opacity opacity-0 duration-300" id="v2_msg">Hello World !!</div>
+                        <div>
+                            <button id="v2_toggle" class="px-3 py-1 rounded-md bg-green-600 text-white">Show</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-100 rounded p-3" x-data="{ show : false }">
+                   <h3 class="text-lg font-semibold text-center">Apline JS</h3>
+                   <div class="flex flex-col items-center space-y-3">
+                        <div class="text-xl font-mono" x-show="show">Hello World !!</div>
+                        <div>
+                            <button id="v1_increase" class="px-3 py-1 rounded-md bg-green-600 text-white" @click="show = !show" x-text="show ? 'Hide': 'Show'">Show</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Variable Management Counter
+        // var can change
+        // const can't change
+        // let can change
+
+        let v1 = 0;
+        const v1Cont = document.getElementById("v1_counter");
+        const v1Increase = document.getElementById("v1_increase");
+        const v1Dncrease = document.getElementById("v1_decrease");
+
+        v1Increase.addEventListener('click', () => {
+            v1 ++ ;
+            v1Cont.textContent = v1;
+        });
+        document.getElementById('v1_decrease').addEventListener('click', () => {
+            if (v1 > 0){
+                v1 --;
+                v1Cont.textContent = v1;
+            };
+        });
+    });
+
+
+    // 2. Show/Hide
+    const v2Btn = document.getElementById("v2_toggle");
+    const v2Msg = document.getElementById("v2_msg");
+
+    v2Btn.addEventListener('click', () => {
+        const isHidden = v2Msg.classList.contains('opacity-0');
+        v2Btn.textContent = isHidden ? 'Hide' : 'Show';
+        v2Msg.classList.toggle('opacity-0', !isHidden);
+        v2Msg.classList.toggle('hidden', !isHidden);
+    });
+
+</script>
+{% endblock %}

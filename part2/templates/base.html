@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         {% tailwind_css %}
     </head>
     <body class="bg-gray-50 min-h-screen flex flex-col font-sans">
@@ -20,6 +21,8 @@
                     {% if user.is_authenticated %}
                     <span class="me-3">ยินดีต้อนรับ {{ user.username }}</span>
                     <a href="{% url 'tailwind_showcase' %}" class="text-sm text-gray-600 bg-violet-300 rounded-md py-1.5 px-3 hover:text-violet-700 transition">Componenet Learning</a>
+                    <a href="{% url 'javascripts_showcases' %}" class="text-sm text-gray-600 bg-amber-500 rounded-md py-1.5 px-3 hover:text-amber-700 transition">JS Learning</a>
+                    <form action="{% url 'logout' %}" method="post" class="d-inline">
                     <form action="{% url 'logout' %}" method="post" class="d-inline">
                         {% csrf_token %}
                         <button type="submit" class="text-sm px-3 py-1.5 rounded-md hover:bg-red-50 bg-red-400">Logout</button>

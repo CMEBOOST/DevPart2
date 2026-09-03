@@ -11,7 +11,11 @@ from .forms import ProfileForm
 
 #FBV
 def home_view(request):
-    return render(request, 'accounts/home.html')
+    context = {}
+    if request.user.is_authenticated:
+        #ดึงโปรไฟล์
+        context['profile'] = Profile.objects.filter(user=request.user).first()
+    return render(request, 'accounts/home.html', context)
 
 #CBV 
 class Registerview(CreateView):
