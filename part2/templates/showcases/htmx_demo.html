@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<div class="space-y-12 py-6" x-data="{showModal : false}">
-    <div class="boder-b border-gray-200 py-5">
+<div class="space-y-12 py-6" x-data="{ showModal: false }">
+    <div class="border-b border-gray-200 py-5">
         <h1 class="text-2xl font-bold">HTMX ShowCase</h1>
-        <p class="text-md mt-2 text-grat-500">CRUD ด้วย HTMX กับข้อมูลใน DB</p>
+        <p class="text-md mt-2 text-gray-500">CRUD ด้วย HTMX กับข้อมูลใน DB</p>
     </div>
 
     <section>
@@ -20,18 +20,41 @@
         {% include "showcase/partials/demo_item_list.html" with items=demo_items %}
     </section>
 
-    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-20" x-show="showModal" x-cloak @keydown.escape.window="showModal = false">
-        <div class="bg-white rounded-xl p-6 w-1/2" x-show="showModal" x-transition @click.outside="showModal = false">
+    <div
+        class="fixed inset-0 z-20 flex items-center justify-center bg-black/50"
+        x-show="showModal"
+        x-cloak
+        @keydown.escape.window="showModal = false"
+    >
+        <div
+            class="w-1/2 rounded-xl bg-white p-6"
+            x-show="showModal"
+            x-transition
+            @click.outside="showModal = false"
+        >
             <h3 class="text-md">เพิ่มรายการใหม่</h3>
-            <form hx-post="{% url 'htmx_showcase_add'%}" 
-            hx-target="#demo-search-list" 
-            hx-swap="outerHTML"
-            @htmx:after-request="showModal = false; this.reset()">
+            <form
+                hx-post="{% url 'htmx_showcase_add' %}"
+                hx-target="#demo-search-list"
+                hx-swap="outerHTML"
+                @htmx:after-request="showModal = false; this.reset()"
+            >
                 {% csrf_token %}
-                <input type="text" name="title" class="w-full rounded-md border px-3 py-2" placeholder="เพิ่มข้อมูลรายการ">
-                <div class="flex justify-end gap-2 mt-2">
-                    <button type="submit" class="bg-green-600 rounded-md px-3 py-2 text-white">เพิ่ม</button>
-                    <button @click="showModal = false" type="button" class="bg-red-600 rounded-md px-3 py-2 text-white">ยกเลิก</button>
+                <input
+                    type="text"
+                    name="title"
+                    class="w-full rounded-md border px-3 py-2"
+                    placeholder="เพิ่มข้อมูลรายการ"
+                >
+                <div class="mt-2 flex justify-end gap-2">
+                    <button type="submit" class="rounded-md bg-green-600 px-3 py-2 text-white">เพิ่ม</button>
+                    <button
+                        @click="showModal = false"
+                        type="button"
+                        class="rounded-md bg-red-600 px-3 py-2 text-white"
+                    >
+                        ยกเลิก
+                    </button>
                 </div>
             </form>
         </div>

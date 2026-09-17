@@ -22,7 +22,7 @@
     </head>
     <body class="bg-gray-50 min-h-screen flex flex-col font-sans">
         <nav class="bg-white border-b border-gray-200 mb-8">
-            <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="w-full mx-auto px-4 py-3 flex items-center justify-between">
                 <span class="font-semibold text-lg">My WebDev Project69</span>
                 <div class="flex items-center gap-3">
                     {% if user.is_authenticated %}
@@ -38,6 +38,9 @@
                     {% else %}
                     <a href="{% url 'login' %}" class="btn-surachet">Login</a>
                     <a href="{% url 'register' %}" class="btn-sud">Register</a>
+                    {% endif %}
+                    {% if user.is_staff %}
+                        <a href="#" class="btn-surachet">USER TASK</a>
                     {% endif %}
                 </div>
             </div>
