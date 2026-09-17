@@ -11,6 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)  # One user, one profile
     avatar = models.ImageField(upload_to=user_avatar_path, blank=True, null=True)
     bio = models.TextField(blank=True)
+    score = models.IntegerField(default=0)
     
     def __str__(self):
         return self.user
